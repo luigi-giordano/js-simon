@@ -12,13 +12,19 @@
 </head>
 <body>
 
-<div class="container text-center mt-5">
-    <h1 class="mb-4">Indovina il numero!</h1>
+  <div class="container text-center mt-5">
+    <h1 class="mb-4">Gioco dei Numeri</h1>
     <div class="numbers mb-3">
         <!-- Numeri casuali -->
     </div>
     <div class="inputs mb-3 d-none">
-        <!-- Campi di input -->
+        <!-- Input già presenti -->
+        <input type="number" class="form-control mb-2" placeholder="Numero 1">
+        <input type="number" class="form-control mb-2" placeholder="Numero 2">
+        <input type="number" class="form-control mb-2" placeholder="Numero 3">
+        <input type="number" class="form-control mb-2" placeholder="Numero 4">
+        <input type="number" class="form-control mb-2" placeholder="Numero 5">
+        <button class="btn btn-primary mt-3" onclick="checkResults()">Verifica</button>
     </div>
     <div class="result alert alert-info d-none">
         <!-- Risultato -->
@@ -27,7 +33,6 @@
         <!-- Timer -->
     </div>
 </div>
-
 <!-- Collegamento JS -->
 <script src="script.js"></script>
 

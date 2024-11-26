@@ -30,9 +30,14 @@ const timerInterval = setInterval(() => {
       timerContainer.classList.remove('alert-primary');
       timerContainer.classList.add('alert-secondary');
       timerContainer.textContent = 'Tempo scaduto!';
-      
+
       // Nascondi i numeri e mostra gli input
       numbersContainer.classList.add('d-none');
       showInputFields();
   }
 }, 1000);
+
+function showInput() {
+  // Mostra il contenitore degli input rimuovendo la classe `d-none`
+  inputsContainer.classList.remove('d-none');
+}
