@@ -12,6 +12,8 @@ const numbersContainer = document.querySelector('.numbers');
 const inputsContainer = document.querySelector('.inputs');
 const resultContainer = document.querySelector('.result');
 const timerContainer = document.querySelector('.timer');
+const btnVerifica = document.querySelector('.btn');
+const inputs = document.querySelectorAll('input');
 
 // Genera i numeri casuali e li mostra
 const randomNumbers = getRandomNumbers();
@@ -20,6 +22,7 @@ numbersContainer.innerText = `Numeri: ${randomNumbers.join(', ')}`;
 // Timer di 10 secondi
 let countdown = 10;
 timerContainer.innerText = `Tempo rimanente: ${countdown} secondi`;
+
 
 const timerInterval = setInterval(() => {
   countdown--;
@@ -35,8 +38,20 @@ const timerInterval = setInterval(() => {
 
       // Nascondi i numeri e mostra gli input
       numbersContainer.classList.add('d-none');
-      showInputFields();
+      
   }
 }, 1000);
 
+btnVerifica.addEventListener('click', function(){
 
+  let contatore = 0
+  let arrayRisultato = []
+
+  for (let i = 0; i < inputs.length - 1; i++) {
+    if(randomNumbers.includes(inputs[i].value)) {
+      contatore++
+      arrayRisultato.push(inputs[i].value)
+    }
+    console.log(contatore, arrayRisultato)
+  }
+})
