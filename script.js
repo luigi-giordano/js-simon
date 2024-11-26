@@ -20,3 +20,19 @@ numbersContainer.innerText = `Numeri: ${randomNumbers.join(', ')}`;
 // Timer di 10 secondi
 let countdown = 10;
 timerContainer.innerText = `Tempo rimanente: ${countdown} secondi`;
+
+const timerInterval = setInterval(() => {
+  countdown--;
+  if (countdown > 0) {
+      timerContainer.textContent = `Tempo rimanente: ${countdown} secondi`;
+  } else {
+      clearInterval(timerInterval);
+      timerContainer.classList.remove('alert-primary');
+      timerContainer.classList.add('alert-secondary');
+      timerContainer.textContent = 'Tempo scaduto!';
+      
+      // Nascondi i numeri e mostra gli input
+      numbersContainer.classList.add('d-none');
+      showInputFields();
+  }
+}, 1000);
