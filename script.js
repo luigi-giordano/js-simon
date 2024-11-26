@@ -25,11 +25,13 @@ const timerInterval = setInterval(() => {
   countdown--;
   if (countdown > 0) {
       timerContainer.textContent = `Tempo rimanente: ${countdown} secondi`;
+      
   } else {
       clearInterval(timerInterval);
       timerContainer.classList.remove('alert-primary');
       timerContainer.classList.add('alert-secondary');
       timerContainer.textContent = 'Tempo scaduto!';
+      inputsContainer.classList.remove('d-none');
 
       // Nascondi i numeri e mostra gli input
       numbersContainer.classList.add('d-none');
@@ -37,7 +39,4 @@ const timerInterval = setInterval(() => {
   }
 }, 1000);
 
-function showInput() {
-  // Mostra il contenitore degli input rimuovendo la classe `d-none`
-  inputsContainer.classList.remove('d-none');
-}
+
